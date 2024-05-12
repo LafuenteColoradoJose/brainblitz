@@ -5,3 +5,51 @@
 [x-cloak] {
     display: none;
 }
+
+
+/*
+
+color principal: #f6c358    rgb(246,195,88)
+color secundario: #fcd462   rgb(252,212,98)
+
+complementario: #588bf6 rgb(88,139,246)
+
+Analogo: #f67458 rgb(246,116,88)
+Analogo: #daf658 rgb(218,246,88)
+
+
+
+    #010000  #130d01  #261a02  #382703  #4b3404  #5e4105  #704e06  #835b07  #956808  #a87509  #bb820a  #cd8f0b  #e09b0c
+
+PALETTE
+
+#CCEF06  rgb(204, 239, 6)
+#f6c358  rgb(246,195,88)
+#FF2D2D  rgb(255, 45, 45)
+#35AFAE  rgb(53, 175, 174)  #479d9d
+#353531  rgb(53, 53, 49)
+#EAF2E3  rgb(234, 242, 227)
+
+
+https://coolors.co/palettes/popular/#f6c358
+
+
+*/
+/* 
+html {
+    background-image: url('../../public/img/bg.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+} */
+
+html {
+  max-height: 800vh;  
+  overflow: hidden; 
+}
+
+/* main {
+    background-color: #EAF2E3;
+} */
+ 

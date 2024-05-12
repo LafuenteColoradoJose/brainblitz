@@ -30,9 +30,9 @@ const logout = () => {
 <template>
     <div>
         <Head :title="title" />
-
+        
         <Banner />
-
+        
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
             <nav class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
                 <!-- Primary Navigation Menu -->
@@ -50,6 +50,21 @@ const logout = () => {
                             <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
+                                </NavLink>
+                            </div>
+                            <div v-if="$page.props.user.permissions.includes('read levels')" class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                                <NavLink  :href="route('levels.index')" :active="route().current('levels.*')">
+                                    Levels
+                                </NavLink>
+                            </div>
+                            <div v-if="$page.props.user.permissions.includes('read scores')" class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                                <NavLink  :href="route('scores.index')" :active="route().current('scores.*')">
+                                    Scores
+                                </NavLink>
+                            </div>
+                            <div v-if="$page.props.user.permissions.includes('read roles')" class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                                <NavLink  :href="route('roles.index')" :active="route().current('roles.*')">
+                                    Roles
                                 </NavLink>
                             </div>
                         </div>
@@ -195,6 +210,21 @@ const logout = () => {
                             Dashboard
                         </ResponsiveNavLink>
                     </div>
+                    <div v-if="$page.props.user.permissions.includes('read levels')" class="pt-2 pb-3 space-y-1">
+                        <ResponsiveNavLink :href="route('levels.index')" :active="route().current('levels.*')">
+                            Levels
+                        </ResponsiveNavLink>
+                    </div>
+                    <div v-if="$page.props.user.permissions.includes('read scores')" class="pt-2 pb-3 space-y-1">
+                        <ResponsiveNavLink :href="route('scores.index')" :active="route().current('scores.*')">
+                           Scores
+                        </ResponsiveNavLink>
+                    </div>
+                    <div v-if="$page.props.user.permissions.includes('read roles')" class="pt-2 pb-3 space-y-1">
+                        <ResponsiveNavLink :href="route('roles.index')" :active="route().current('roles.*')">
+                           Roles
+                        </ResponsiveNavLink>
+                    </div>
 
                     <!-- Responsive Settings Options -->
                     <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">
@@ -287,3 +317,7 @@ const logout = () => {
         </div>
     </div>
 </template>
+
+<style scoped>
+
+</style>

@@ -15,31 +15,31 @@ class LevelSeeder extends Seeder
     {
         Level::create([
             "name"=> "Beginner",
-            "requiered_score"=> 0,
+            "required_score"=> 0,
             "icon_uri"=> asset('images/levels/beginner.svg')
         ]);
 
         Level::create([
             "name"=> "Apprentice",
-            "requiered_score"=> 1000,
+            "required_score"=> 1000,
             "icon_uri"=> asset('images/levels/apprentice.svg')
         ]);
 
         Level::create([
             "name"=> "Intermediate",
-            "requiered_score"=> 3000,
+            "required_score"=> 3000,
             "icon_uri"=> asset('images/levels/intermediate.svg')
         ]);
 
         Level::create([
             "name"=> "Advanced",
-            "requiered_score"=> 6000,
+            "required_score"=> 6000,
             "icon_uri"=> asset('images/levels/advanced.svg')
         ]);
 
         Level::create([
             "name" => 'Expert',
-            "requiered_score"=> 10000,
+            "required_score"=> 10000,
             "icon_uri"=> asset('images/levels/expert.svg')
             ]);
         

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('levels', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('requiered_score');
+            $table->integer('required_score');
             $table->string('icon_uri', 255)->nullable();
             $table->timestamps();
 

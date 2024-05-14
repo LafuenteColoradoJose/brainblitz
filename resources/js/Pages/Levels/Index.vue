@@ -11,8 +11,8 @@ export default {
             <h2 class="font-semibold text-xl text-[#353531] leading-tight">Levels</h2>
         </template>
 
-        <section class="flex flex-col justify-center items-center m-3 gap-8">
-            <article>
+        <section class="flex flex-col justify-center items-center m-3 gap-8" v-if="$page.props.user.permissions.includes('read levels')">
+            <article v-if="$page.props.user.permissions.includes('create levels')">
                 <Link :href="route('levels.create')"
                     class="bg-[#35AFAE] hover:bg-[#479d9d] text-white font-bold py-2 px-4 rounded">Create Level</Link>
             </article>
@@ -42,19 +42,26 @@ export default {
                                 <div class="text-sm text-gray-900">{{ level.name }}</div>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="text-sm text-gray-900">{{ level.requiered_score }}</div>
+                                <div class="text-sm text-gray-900">{{ level.required_score }}</div>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                <Link :href="route('levels.edit', level.id)" class="text-indigo-600 hover:text-indigo-900 mr-4" >Edit</Link>
-                                <Link  @click="deleteLevel(level.id)" class="text-red-600 hover:text-red-900">Delete</Link>
+                                <Link :href="route('levels.edit', level.id)" class="text-indigo-600 hover:text-indigo-900 mr-4" v-if="$page.props.user.permissions.includes('update levels')">Edit</Link>
+                                <Link  @click="deleteLevel(level.id)" class="text-red-600 hover:text-red-900" v-if="$page.props.user.permissions.includes('delete levels')">Delete</Link>
                             </td>
                         </tr>
 
                     </tbody>
                 </table>
-
             </article>
-
+            <article  class="flex flex-row justify-between gap-40">
+                <Link v-if="levels.current_page > 1" :href="levels.prev_page_url"
+                    class="rounded">Previus</Link>
+                    <div v-else></div>
+                    <Link v-if="levels.current_page < levels.last_page" :href="levels.next_page_url"
+                    class="rounded">Next</Link>
+                    <div v-else></div>
+                </article>
+            
         </section>
     </AppLayout>
 
@@ -64,6 +71,7 @@ export default {
 <script setup>
 import AppLayout from '@/Layouts/AppLayout.vue';
 import { Link } from '@inertiajs/vue3';
+import { Inertia } from '@inertiajs/inertia';
 
 defineProps({
     levels: {
@@ -74,7 +82,7 @@ defineProps({
 
 const deleteLevel = async (id) => {
     if (confirm('Are you sure you want to delete this level?')) {
-        await $inertia.delete(route('levels.destroy', id));
+        await Inertia.delete(route('levels.destroy', id));
     }
 }
 </script>

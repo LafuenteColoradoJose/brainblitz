@@ -20,8 +20,8 @@ return new class extends Migration
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
-            $table->unsignedInteger('level_id');
-            $table->unsignedInteger('score_id');
+            // $table->unsignedBigInteger('level_id')->nullable();
+            // $table->unsignedBigInteger('score_id')->nullable();
             $table->timestamps();
 
             $table->foreign('level_id')->references('id')

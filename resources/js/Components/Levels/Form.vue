@@ -26,8 +26,8 @@ export default {
                 </div>
             </div>
         </template>
-        <template #actions>
-            <PrimaryButton :loading="$page.props.processing" class="mt-2">
+        <template #actions >
+            <PrimaryButton :loading="$page.props.processing" class="mt-2" >
                 {{ updating ? 'Update Level' : 'Create Level' }}
             </PrimaryButton>
         </template>

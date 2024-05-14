@@ -7,9 +7,9 @@
 </script>
 
 <template>
-    <AppLayout>
+    <AppLayout title="Create Level">
         <template #header>
-            <h2 class="font-semibold text-xl text-[#353531] leading-tight">Create Levels</h2>
+            <h2 class="font-semibold text-xl text-[#353531] leading-tight">Create Level</h2>
         </template>
 
         <section class="flex flex-col justify-center items-center m-3 gap-8">
@@ -26,7 +26,8 @@ import AppLayout from '@/Layouts/AppLayout.vue';
 import LevelForm from '@/Components/Levels/Form.vue';
 
 const form = useForm({
-    name: ''
+    name: '',
+    required_score: '',
 })
 
 </script>

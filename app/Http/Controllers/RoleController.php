@@ -3,15 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests;
+use App\Models\Role;
+use Inertia\Response;
+
 
 class RoleController extends Controller
 {
+    const NUMBER_OF_ITEMS_PER_PAGE = 5;
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return 'Hello World!';
+        $roles = Role::paginate(self::NUMBER_OF_ITEMS_PER_PAGE);
+        // $roles = Role::all();
+        return inertia('Roles/Index', ['roles' => $roles]);
     }
 
     /**
@@ -19,7 +26,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-        //
+        // return inertia('Roles/Create');
     }
 
     /**
@@ -27,7 +34,7 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**

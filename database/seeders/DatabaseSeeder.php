@@ -23,7 +23,6 @@ class DatabaseSeeder extends Seeder
             LevelSeeder::class, 
             RoleSeeder::class,
             UserSeeder::class,
-            ScoreSeeder::class,
         ]);
     }
 }

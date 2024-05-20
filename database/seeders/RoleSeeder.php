@@ -27,10 +27,11 @@ class RoleSeeder extends Seeder
         $permission_update_level = Permission::create(['name'=> 'update levels']);
         $permission_delete_level = Permission::create(['name'=> 'delete levels']);
 
-        $permission_create_score = Permission::create(['name' => 'create scores']);
-        $permission_read_score = Permission::create(['name'=> 'read scores']);
-        $permission_update_scores = Permission::create(['name'=> 'update scores']);
-        $permission_delete_score = Permission::create(['name'=> 'delete scores']);
+        $permission_created_user = Permission::create(['name' => 'create users']);
+        $permission_read_user = Permission::create(['name'=> 'read users']);
+        $permission_update_user = Permission::create(['name'=> 'update users']);
+        $permission_delete_user = Permission::create(['name'=> 'delete users']);
+
 
         $permissions_admin = [
             $permission_create_role,
@@ -41,17 +42,16 @@ class RoleSeeder extends Seeder
             $permission_read_level,
             $permission_update_level,
             $permission_delete_level,
-            $permission_create_score,
-            $permission_read_score,
-            $permission_update_scores,
-            $permission_delete_score,
-
+            $permission_read_user
         ];
 
         $permissions_user = [
+            $permission_read_user,
+            $permission_update_user,
+            $permission_delete_user,
+
             $permission_read_role,
             $permission_read_level,
-            $permission_read_score,
         ];
 
         $role_admin->syncPermissions($permissions_admin);

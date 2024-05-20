@@ -5,15 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Score extends Model
+class Role extends Model
 {
     use HasFactory;
 
     protected $guarded = [];
 
-    public function user()
-    {
-        return $this->hasMany(User::class);
-    }
-
+   
 }

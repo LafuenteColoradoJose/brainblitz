@@ -57,11 +57,7 @@ const logout = () => {
                                     Levels
                                 </NavLink>
                             </div>
-                            <div v-if="$page.props.user.permissions.includes('read scores')" class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                                <NavLink  :href="route('scores.index')" :active="route().current('scores.*')">
-                                    Scores
-                                </NavLink>
-                            </div>
+                            
                             <div v-if="$page.props.user.permissions.includes('read roles')" class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                                 <NavLink  :href="route('roles.index')" :active="route().current('roles.*')">
                                     Roles
@@ -215,11 +211,7 @@ const logout = () => {
                             Levels
                         </ResponsiveNavLink>
                     </div>
-                    <div v-if="$page.props.user.permissions.includes('read scores')" class="pt-2 pb-3 space-y-1">
-                        <ResponsiveNavLink :href="route('scores.index')" :active="route().current('scores.*')">
-                           Scores
-                        </ResponsiveNavLink>
-                    </div>
+                   
                     <div v-if="$page.props.user.permissions.includes('read roles')" class="pt-2 pb-3 space-y-1">
                         <ResponsiveNavLink :href="route('roles.index')" :active="route().current('roles.*')">
                            Roles

@@ -20,15 +20,13 @@ return new class extends Migration
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
-            // $table->unsignedBigInteger('level_id')->nullable();
-            // $table->unsignedBigInteger('score_id')->nullable();
+            $table->unsignedBigInteger('level_id')->default(1);
+            $table->unsignedBigInteger('score')->default(0);
             $table->timestamps();
 
             $table->foreign('level_id')->references('id')
             ->on('levels')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('score_id')->references('id')
-            ->on('scores')->onUpdate('cascade')->onDelete('cascade');
-
+           
         });
     }
 

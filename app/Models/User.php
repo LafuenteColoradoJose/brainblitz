@@ -29,6 +29,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'score'
     ];
 
     /**
@@ -66,8 +67,5 @@ class User extends Authenticatable
         return $this->belongsTo(Level::class);
     }
     
-    public function score()
-    {
-        return $this->belongsTo(Score::class);
-    }
+    
 }

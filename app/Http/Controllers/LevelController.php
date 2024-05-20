@@ -9,10 +9,11 @@ use App\Http\Requests\LevelRequest;
 
 class LevelController extends Controller
 {
+    const NUMBER_OF_ITEMS_PER_PAGE = 5;
+    
     /**
      * Display a listing of the resource.
      */
-    const NUMBER_OF_ITEMS_PER_PAGE = 5;
     public function index()
     {
         $levels = Level::paginate(self::NUMBER_OF_ITEMS_PER_PAGE);

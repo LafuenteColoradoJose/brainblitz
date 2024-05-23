@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,12 +19,14 @@ use App\Http\Controllers\Auth\LogoutController;
 |
 */
 
-Route::post('/auth/register', [RegisterController::class, 'registerUser']);
-Route::post('/auth/login', [LoginController::class, 'loginUser']);
-Route::middleware('auth:sanctum')->group(function () {
-    Route::get('/auth/logout', [LogoutController::class, 'logoutUser']);
-    Route::get('/users', [UserController::class, 'index']);
-});
+Route::post('/user/register', [RegisterController::class, 'registerUser']);
+Route::post('/user/login', [LoginController::class, 'loginUser']);
+
+
+// Route::middleware('auth:sanctum')->group(function () {
+//     Route::get('/auth/logout', [LogoutController::class, 'logoutUser']);
+//     Route::get('/users', [UserController::class, 'index']);
+// });
 
 
 

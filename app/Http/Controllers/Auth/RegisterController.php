@@ -35,7 +35,7 @@ class RegisterController extends Controller
         ]);
 
         return response()->json([
-            'message' => 'El usuario se ha creado',
+            'message' => 'User created successfully',
             'token' => $user->createToken("API ACCESS TOKEN")->plainTextToken
         ], 200);
     }

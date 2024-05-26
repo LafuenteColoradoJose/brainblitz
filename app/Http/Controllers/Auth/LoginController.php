@@ -34,6 +34,7 @@ class LoginController extends Controller
         $user = User::where('email', $request->email)->first();
 
         return response()->json([
+            'user' => $user,
             'message' => 'Login correcto',
             'token' => $user->createToken("API ACCESS TOKEN")->plainTextToken
         ], 200);

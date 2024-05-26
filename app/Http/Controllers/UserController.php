@@ -39,7 +39,11 @@ class UserController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $user = User::find($id);
+
+        return response()->json([
+            'user' => $user,
+        ]);
     }
 
     /**
@@ -53,9 +57,15 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-        //
+        $user = User::find($request->id);
+        $user->score = $request->score;
+        $user->save();
+
+        return response()->json([
+            'message' => 'User updated successfully!',
+        ]);
     }
 
     /**

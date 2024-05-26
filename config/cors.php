@@ -15,11 +15,11 @@ return [
     |
     */
 
-    'paths' => ['api/user/register/*', 'api/user/login/*'],
+    'paths' => ['*'],
 
-    'allowed_methods' => ['POST'],
+    'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['http://127.0.0.1:8000/*', '*'],
+    'allowed_origins' => ['*'],
 
     'allowed_origins_patterns' => [],
 

@@ -19,14 +19,19 @@ use App\Http\Controllers\PostController;
 |
 */
 
+// Route::get('/prueba', function (){
+//     return response()->json(['message' => 'Hello World!'], 200);
+// });
+
 Route::post('/user/register', [RegisterController::class, 'registerUser']);
 Route::post('/user/login', [LoginController::class, 'loginUser']);
+Route::get('/user/show/{id}', [UserController::class, 'show']);
+Route::patch('/user/update/{id}', [UserController::class,'update']);
 
-
-// Route::middleware('auth:sanctum')->group(function () {
-//     Route::get('/auth/logout', [LogoutController::class, 'logoutUser']);
-//     Route::get('/users', [UserController::class, 'index']);
-// });
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('/auth/logout', [LogoutController::class, 'logoutUser']);
+    Route::get('/users', [UserController::class, 'index']);
+});
 
 
 

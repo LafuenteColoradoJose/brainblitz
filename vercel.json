@@ -1,8 +1,14 @@
 {
     "version": 2,
     "builds": [
-        { "src": "/api/index.php", "use": "vercel-php@0.6.2" },
-        { "src": "/public/**", "use": "@vercel/static" }
+        {
+            "src": "/api/index.php",
+            "use": "vercel-php@0.6.2"
+        },
+        {
+            "src": "/public/**",
+            "use": "@vercel/static"
+        }
     ],
     "routes": [
         {
@@ -31,5 +37,8 @@
         "VIEW_COMPILED_PATH": "/tmp/views",
         "SSR_TEMP_PATH": "/tmp/ssr",
         "NODE_PATH": "node"
+    },
+    "scripts": {
+        "build": "npm run build"
     }
 }

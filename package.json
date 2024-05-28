@@ -21,5 +21,11 @@
     },
     "dependencies": {
         "@inertiajs/inertia": "^0.11.1"
+    },
+    "build": {
+        "env": {
+            "NODE_ENV": "production"
+        },
+        "command": "npm run build"
     }
 }

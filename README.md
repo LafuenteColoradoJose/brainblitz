@@ -1,66 +1,167 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+```md
+# BrainBlitz Vue
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+BrainBlitz es una aplicación de cuestionarios diseñada para desafiar tus conocimientos en una variedad de temas. Este proyecto utiliza tecnologías modernas para ofrecer una experiencia de usuario interactiva y atractiva, con un enfoque en el rendimiento y la escalabilidad.
 
-## About Laravel
+## Tecnologías Utilizadas
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Vue 3**: Framework progresivo de JavaScript utilizado para construir la interfaz de usuario de la aplicación.
+- **Vite**: Herramienta de construcción rápida y moderna que optimiza el desarrollo y la producción.
+- **Tailwind CSS**: Framework de CSS para diseñar interfaces de usuario modernas y responsivas.
+- **Inertia.js**: Herramienta que conecta el frontend y el backend sin necesidad de una API REST tradicional.
+- **Laravel**: Framework de PHP utilizado para manejar el backend de la aplicación.
+- **Vitest**: Framework de pruebas unitarias para garantizar la calidad del código.
+- **Cypress**: Herramienta para pruebas end-to-end que asegura la funcionalidad de la aplicación.
+- **Axios**: Cliente HTTP para manejar solicitudes al backend.
+- **PHP 8.2**: Lenguaje de programación utilizado en el backend para manejar la lógica del servidor.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Recommended IDE Setup
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
 
-## Learning Laravel
+## Customize Configuration
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Project Setup
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+```sh
+npm install
+```
 
-## Laravel Sponsors
+### Compile and Hot-Reload for Development
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+```sh
+npm run dev
+```
 
-### Premium Partners
+### Compile and Minify for Production
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+```sh
+npm run build
+```
 
-## Contributing
+### Run Unit Tests with [Vitest](https://vitest.dev/)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```sh
+npm run test:unit
+```
 
-## Code of Conduct
+### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```sh
+npm run test:e2e:dev
+```
 
-## Security Vulnerabilities
+This runs the end-to-end tests against the Vite development server.
+It is much faster than the production build.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
 
-## License
+```sh
+npm run build
+npm run test:e2e
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Funcionalidades Principales
+
+- **Sistema de Cuestionarios**: Los usuarios pueden participar en cuestionarios con preguntas de diferentes categorías y niveles de dificultad.
+- **Puntuación y Progreso**: La aplicación rastrea la puntuación del usuario y muestra su progreso en tiempo real.
+- **Interfaz Responsiva**: Diseñada para adaptarse a diferentes tamaños de pantalla, desde dispositivos móviles hasta escritorios.
+- **Autenticación**: Integración con Laravel Sanctum para manejar la autenticación de usuarios.
+- **Pruebas Automatizadas**: Pruebas unitarias con Vitest y pruebas end-to-end con Cypress para garantizar la estabilidad de la aplicación.
+
+## Instalación y Configuración
+
+### Requisitos Previos
+
+- Node.js y npm instalados.
+- PHP 8.1 o superior.
+- Composer instalado.
+- Servidor MySQL o SQLite configurado.
+
+### Configuración del Proyecto
+
+1. Clona el repositorio:
+
+```sh
+git clone https://github.com/tu-usuario/brainblitz_vue.git
+cd brainblitz_vue
+```
+
+2. Instala las dependencias del frontend:
+
+```sh
+npm install
+```
+
+3. Instala las dependencias del backend:
+
+```sh
+composer install
+```
+
+4. Configura las variables de entorno:
+
+Copia el archivo `.env.example` y renómbralo como `.env`. Luego, configura las variables de entorno necesarias, como la conexión a la base de datos y la URL de la aplicación.
+
+```sh
+cp .env.example .env
+php artisan key:generate
+```
+
+5. Compila los activos del frontend:
+
+```sh
+npm run build
+```
+
+6. Inicia el servidor de desarrollo:
+
+```sh
+php artisan serve
+npm run dev
+```
+
+## Pruebas
+
+### Pruebas Unitarias
+
+Ejecuta las pruebas unitarias con Vitest:
+
+```sh
+npm run test:unit
+```
+
+### Pruebas End-to-End
+
+Ejecuta las pruebas end-to-end con Cypress:
+
+```sh
+npm run test:e2e:dev
+```
+
+Para probar la versión de producción:
+
+```sh
+npm run build
+npm run test:e2e
+```
+
+## Despliegue
+
+El proyecto está configurado para ser desplegado en **Vercel**. Asegúrate de que el archivo `vercel.json` esté correctamente configurado y que los comandos de construcción generen los activos necesarios.
+
+## Contribuciones
+
+Las contribuciones son bienvenidas. Si deseas contribuir, por favor abre un issue o envía un pull request.
+
+## Licencia
+
+Este proyecto está licenciado bajo la [MIT License](https://opensource.org/licenses/MIT).
+
+---
+
+Si tienes alguna pregunta o necesitas ayuda, no dudes en ponerte en contacto con el equipo de desarrollo. ¡Gracias por usar BrainBlitz!
+```
+
